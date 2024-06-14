@@ -9,6 +9,11 @@ Add package & repository to composer.json
     "require": {
         "maximzhurkin/containers": "dev-master"
     },
+    "autoload": {
+        "psr-4": {
+            "Containers\\": "containers/"
+        }
+    },
     "repositories": [
         {
             "type": "git",
