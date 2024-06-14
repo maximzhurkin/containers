@@ -1,0 +1,14 @@
+<?php
+
+namespace Containers\DummyContainer\Data\Repositories;
+
+use Containers\DummyContainer\Models\DummyName;
+use Illuminate\Database\Eloquent\Collection;
+
+class DummyNameRepository
+{
+    public function getAll(): Collection
+    {
+        return DummyName::all();
+    }
+}

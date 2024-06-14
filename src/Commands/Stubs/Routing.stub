@@ -1,0 +1,22 @@
+<?php
+
+namespace Containers\DummyContainer\Http\Routing;
+
+use Maximzhurkin\Containers\Contracts\RouteRegistrar;
+use Illuminate\Contracts\Routing\Registrar;
+use Illuminate\Support\Facades\Route;
+use Containers\DummyContainer\Http\Controllers\DummyNameController;
+
+final class DummyNameRouting implements RouteRegistrar
+{
+    public function map(Registrar $registrar): void
+    {
+        Route::middleware('api')
+            ->prefix('/api/v1')
+            ->group(function () {
+                Route::prefix('/DummyName')->group(function () {
+                    Route::get('/', [DummyNameController::class, 'index']);
+                });
+            });
+    }
+}

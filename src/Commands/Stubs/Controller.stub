@@ -1,0 +1,51 @@
+<?php
+
+namespace Containers\DummyContainer\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Containers\DummyContainer\Models\DummyName;
+use Containers\DummyContainer\Http\Requests\StoreDummyNameRequest;
+use Containers\DummyContainer\Http\Requests\UpdateDummyNameRequest;
+
+class DummyNameController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        return 'DummyName@index';
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreDummyNameRequest $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(DummyName $dummyName)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateDummyNameRequest $request, DummyName $dummyName)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(DummyName $dummyName)
+    {
+        //
+    }
+}
