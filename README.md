@@ -1,5 +1,61 @@
 # Laravel Containers Package
 
+A package with commands for a convenient Laravel project structure
+
+```text
+containers
+├── Order
+│   ├── Data
+│   │   ├── Factories
+│   │   │   ├── OrderFactory.php
+│   │   │   └── OrderStatusFactory.php
+│   │   ├── Migrations
+│   │   │   ├── 202406141234_create_orders_table.php
+│   │   │   └── 202406141350_create_order_statuses_table.php
+│   │   └── Repositories
+│   │       ├── OrderRepository.php
+│   │       └── OrderStatusRepository.php
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── OrderController.php
+│   │   │   └── OrderStatusController.php
+│   │   ├── Requests
+│   │   │   ├── StoreOrderRequest.php
+│   │   │   ├── StoreOrderStatusRequest.php
+│   │   │   ├── UpdateOrderRequest.php
+│   │   │   └── UpdateOrderStatusRequest.php
+│   │   └── Routing
+│   │       ├── OrderRouting.php
+│   │       └── OrderStatusRouting.php
+│   ├── Models
+│   │   ├── Order.php
+│   │   └── OrderStatus.php
+│   └── Providers
+│       ├── OrderProvider.php
+│       └── OrderStatusProvider.php
+└── User
+    ├── Data
+    │   ├── Factories
+    │   │   └── UserFactory.php
+    │   ├── Migrations
+    │   │   └── 202406141352_create_users_table.php
+    │   └── Repositories
+    │       └── UserRepository.php
+    ├── Http
+    │   ├── Controllers
+    │   │   └── UserController.php
+    │   ├── Requests
+    │   │   ├── StoreUserRequest.php
+    │   │   ├── UpdateUserRequest.php
+    │   │   └── UserRequest.php
+    │   └── Routing
+    │       └── UserRouting.php
+    ├── Models
+    │   └── User.php
+    └── Providers
+        └── UserProvider.php
+```
+
 ## Install
 
 Add package & repository to composer.json
