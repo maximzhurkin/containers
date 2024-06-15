@@ -77,11 +77,6 @@ return [
     'routes' => [
         OrderRouting::class,
     ],
-    'rate_limiting' => [
-        'enabled' => false,
-        'for' => 'api',
-        'per_minute' => 60,
-    ],
 ];
 ```
 
