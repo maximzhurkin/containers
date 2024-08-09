@@ -18,7 +18,7 @@ class DummyName extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-
+        'title',
     ];
 
     public static function factory(): DummyNameFactory
