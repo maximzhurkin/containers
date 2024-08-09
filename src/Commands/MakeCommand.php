@@ -143,12 +143,14 @@ abstract class MakeCommand extends Command
                     'DummyContainer',
                     'DummyName',
                     'dummyName',
+                    'dummy_name',
                     'dummyURLName'
                 ],
                 [
                     $this->getContainer(),
                     $this->getReplacedName(),
                     Str::lcfirst($this->getReplacedName()),
+                    Str::snake($this->getReplacedName()),
                     Str::lcfirst($this->getDummyUrlName())
                 ],
                 File::get($this->getStub())

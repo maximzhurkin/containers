@@ -54,5 +54,9 @@ class MakeContainerCommand extends Command
             'name' => $this->argument('name'),
             'container' => $this->argument('container'),
         ]);
+        $this->call('app:test', [
+            'name' => $this->argument('name'),
+            'container' => $this->argument('container'),
+        ]);
     }
 }

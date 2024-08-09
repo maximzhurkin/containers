@@ -1,0 +1,24 @@
+<?php
+
+namespace Containers\DummyContainer\Tests\Unit;
+
+use Containers\DummyContainer\Models\DummyName;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class DummyNameTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * Test create DummyName
+     */
+    public function test_create_dummy_name_successful(): void
+    {
+        DummyName::factory()->create([
+            'title' => 'Example',
+        ]);
+        $dummyName = DummyName::first();
+        $this->assertEquals('Example', $dummyName->title);
+    }
+}

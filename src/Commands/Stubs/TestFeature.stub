@@ -1,0 +1,21 @@
+<?php
+
+namespace Containers\DummyContainer\Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class DummyNameTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * Test DummyName index endpoint
+     */
+    public function test_dummy_name_returns_a_successful_response(): void
+    {
+        $response = $this->get('/api/v1/dummyURLName');
+
+        $response->assertStatus(200);
+    }
+}
