@@ -38,6 +38,11 @@ abstract class MakeCommand extends Command
      */
     protected string $stub;
 
+    private function addSuffix($string): string
+    {
+        return $string . (str_ends_with($string, 's') ? 'es' : 's');
+    }
+
     /**
      * Container name
      *
@@ -100,6 +105,20 @@ abstract class MakeCommand extends Command
         return 'containers/' . $this->getContainer() . '/' . $this->layer;
     }
 
+    protected function getNameWithSuffix(): string
+    {
+        return $this->addSuffix($this->argument('name'));
+    }
+
+    protected function getDummyUrlName(): string
+    {
+        $names = explode('_', Str::snake($this->argument('name')));
+
+        return implode('/', array_map(function ($name) {
+            return $this->addSuffix($name);
+        }, $names));
+    }
+
     /**
      * @throws Exception
      */
@@ -123,19 +142,21 @@ abstract class MakeCommand extends Command
                 [
                     'DummyContainer',
                     'DummyName',
-                    'dummyName'
+                    'dummyName',
+                    'dummyURLName'
                 ],
                 [
                     $this->getContainer(),
                     $this->getReplacedName(),
-                    Str::lcfirst($this->getReplacedName())
+                    Str::lcfirst($this->getReplacedName()),
+                    Str::lcfirst($this->getDummyUrlName())
                 ],
                 File::get($this->getStub())
             ));
 
-            $this->info("File {$filename} make successful");
+            $this->info("File $filename make successful");
         } else {
-            $this->warn("File {$filename} already exist");
+            $this->warn("File $filename already exist");
         }
     }
 }
