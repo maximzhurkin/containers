@@ -14,7 +14,7 @@ final class DummyNameRouting implements RouteRegistrar
         Route::middleware('api')
             ->prefix('/api/v1')
             ->group(function () {
-                Route::prefix('/DummyName')->group(function () {
+                Route::prefix('/dummyURLName')->group(function () {
                     Route::get('/', [DummyNameController::class, 'index']);
                 });
             });

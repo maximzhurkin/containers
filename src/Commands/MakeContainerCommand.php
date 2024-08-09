@@ -38,6 +38,10 @@ class MakeContainerCommand extends Command
             'name' => $this->argument('name'),
             'container' => $this->argument('container'),
         ]);
+        $this->call('app:seeder', [
+            'name' => $this->argument('name'),
+            'container' => $this->argument('container'),
+        ]);
         $this->call('app:repository', [
             'name' => $this->argument('name'),
             'container' => $this->argument('container'),

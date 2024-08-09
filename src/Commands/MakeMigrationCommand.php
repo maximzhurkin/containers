@@ -12,21 +12,13 @@ class MakeMigrationCommand extends MakeCommand
     protected string $layer = 'Data/Migrations';
     protected string $stub = 'Migration.stub';
 
-    private function getNameWithSuffix(): string
-    {
-        $name = Str::snake($this->argument('name'));
-        $suffix = str_ends_with($name, 's') ? 'es' : 's';
-
-        return $name . $suffix;
-    }
-
     protected function getFilename(): string
     {
-        return Carbon::now()->format('Y_m_d_His') . '_create_' . $this->getNameWithSuffix() . '_table';
+        return Carbon::now()->format('Y_m_d_His') . '_create_' . $this->getReplacedName() . '_table';
     }
 
     protected function getReplacedName(): string
     {
-        return $this->getNameWithSuffix();
+        return Str::snake($this->getNameWithSuffix());
     }
 }
