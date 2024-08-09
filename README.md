@@ -169,6 +169,14 @@ php artisan app:migration User
 
 *containers/User/Data/Migrations/202406141352_create_users_table.php*
 
+### Create seeder
+
+```shell
+php artisan app:seeder User
+```
+
+*containers/User/Data/Seeders/UserSeeder.php*
+
 ### Create model
 
 ```shell
