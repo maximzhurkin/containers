@@ -1,0 +1,17 @@
+<?php
+
+namespace Containers\DummyContainer\Data\Seeders;
+
+use Containers\DummyContainer\Models\DummyName;
+use Illuminate\Database\Seeder;
+
+class DummyNameSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DummyName::factory()->create();
+    }
+}

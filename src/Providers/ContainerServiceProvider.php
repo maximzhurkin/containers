@@ -7,6 +7,7 @@ use Maximzhurkin\Containers\Commands\MakeContainerCommand;
 use Maximzhurkin\Containers\Commands\MakeControllerCommand;
 use Maximzhurkin\Containers\Commands\MakeFactoryCommand;
 use Maximzhurkin\Containers\Commands\MakeMigrationCommand;
+use Maximzhurkin\Containers\Commands\MakeSeederCommand;
 use Maximzhurkin\Containers\Commands\MakeModelCommand;
 use Maximzhurkin\Containers\Commands\MakeProviderCommand;
 use Maximzhurkin\Containers\Commands\MakeRepositoryCommand;
@@ -37,6 +38,7 @@ class ContainerServiceProvider extends ServiceProvider
                 MakeControllerCommand::class,
                 MakeFactoryCommand::class,
                 MakeMigrationCommand::class,
+                MakeSeederCommand::class,
                 MakeModelCommand::class,
                 MakeProviderCommand::class,
                 MakeRepositoryCommand::class,
