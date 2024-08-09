@@ -22,7 +22,7 @@ class MakeMigrationCommand extends MakeCommand
 
     protected function getFilename(): string
     {
-        return Carbon::now()->format('YmdHi') . '_create_' . $this->getNameWithSuffix() . '_table';
+        return Carbon::now()->format('Y_m_d_His') . '_create_' . $this->getNameWithSuffix() . '_table';
     }
 
     protected function getReplacedName(): string

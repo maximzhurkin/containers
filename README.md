@@ -38,7 +38,7 @@ containers
     │   ├── Factories
     │   │   └── UserFactory.php
     │   ├── Migrations
-    │   │   └── 202406141352_create_users_table.php
+    │   │   └── 2024_06_14_134255_create_users_table.php
     │   └── Repositories
     │       └── UserRepository.php
     ├── Http
