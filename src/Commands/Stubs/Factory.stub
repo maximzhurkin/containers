@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class DummyNameFactory extends Factory
 {
+    /**
+     * The name of the factory's corresponding model.
+     */
     protected $model = DummyName::class;
 
     /**
