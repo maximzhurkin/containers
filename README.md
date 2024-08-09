@@ -19,7 +19,8 @@ containers
 │   │   │   ├── OrderRepository.php
 │   │   │   └── OrderStatusRepository.php
 │   │   └── Seeders
-│   │       └── OrderSeeder.php
+│   │       ├── OrderSeeder.php
+│   │       └── OrderStatusSeeder.php
 │   ├── Http
 │   │   ├── Controllers
 │   │   │   ├── OrderController.php
@@ -35,32 +36,18 @@ containers
 │   ├── Models
 │   │   ├── Order.php
 │   │   └── OrderStatus.php
-│   └── Providers
-│       ├── OrderProvider.php
-│       └── OrderStatusProvider.php
+│   ├── Providers
+│   │   ├── OrderProvider.php
+│   │   └── OrderStatusProvider.php
+│   └── Tests
+│       ├── Feature
+│       │   ├── OrderTest.php
+│       │   └── OrderStatusTest.php
+│       └── Unit
+│           ├── OrderTest.php
+│           └── OrderStatusTest.php
 └── User
-    ├── Data
-    │   ├── Factories
-    │   │   └── UserFactory.php
-    │   ├── Migrations
-    │   │   └── 2024_06_14_134255_create_users_table.php
-    │   ├── Repositories
-    │   │   └── UserRepository.php
-    │   └── Seeders
-    │       └── UserSeeder.php
-    ├── Http
-    │   ├── Controllers
-    │   │   └── UserController.php
-    │   ├── Requests
-    │   │   ├── StoreUserRequest.php
-    │   │   ├── UpdateUserRequest.php
-    │   │   └── UserRequest.php
-    │   └── Routing
-    │       └── UserRouting.php
-    ├── Models
-    │   └── User.php
-    └── Providers
-        └── UserProvider.php
+    └── ...
 ```
 
 ## Install
@@ -109,6 +96,19 @@ return [
     ContainerServiceProvider::class,
     RouteServiceProvider::class,
 ];
+```
+
+### Add tests paths in phpunit.xml
+
+```xml
+<testsuites>
+    <testsuite name="Unit">
+        <directory>containers/*/Tests/Unit</directory>
+    </testsuite>
+    <testsuite name="Feature">
+        <directory>containers/*/Tests/Feature</directory>
+    </testsuite>
+</testsuites>
 ```
 
 ## Use
@@ -224,3 +224,12 @@ php artisan app:routing User
 ```
 
 *containers/User/Http/Routing/UserRouting.php*
+
+### Create test
+
+```shell
+php artisan app:test User
+```
+
+*containers/User/Tests/Feature/UserTest.php*
+*containers/User/Tests/Unit/UserTest.php*
