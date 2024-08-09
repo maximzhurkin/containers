@@ -1,0 +1,10 @@
+<?php
+
+namespace Containers\DummyContainer\Contracts;
+
+use Illuminate\Database\Eloquent\Collection;
+
+interface DummyNameRepositoryContract
+{
+    public function getAll(): Collection;
+}

@@ -2,15 +2,33 @@
 
 namespace Maximzhurkin\Containers\Commands;
 
-class MakeRepositoryCommand extends MakeCommand
-{
-    protected $signature = 'app:repository {name} {container?}';
-    protected $description = 'Create new repository';
-    protected string $layer = 'Data/Repositories';
-    protected string $stub = 'Repository.stub';
+use Illuminate\Console\Command;
 
-    protected function getFilename(): string
+class MakeRepositoryCommand extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'app:repository {name} {container?}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Create new repository';
+
+    public function handle(): void
     {
-        return $this->argument('name') . 'Repository';
+        $this->call('app:repository-eloquent', [
+            'name' => $this->argument('name'),
+            'container' => $this->argument('container'),
+        ]);
+        $this->call('app:repository-contract', [
+            'name' => $this->argument('name'),
+            'container' => $this->argument('container'),
+        ]);
     }
 }
