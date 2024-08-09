@@ -5,16 +5,21 @@ A package with commands for a convenient Laravel project structure
 ```text
 containers
 ├── Order
+│   ├── Contracts
+│   │   ├── OrderRepositoryContract.php
+│   │   └── OrderStatusRepositoryContract.php
 │   ├── Data
 │   │   ├── Factories
 │   │   │   ├── OrderFactory.php
 │   │   │   └── OrderStatusFactory.php
 │   │   ├── Migrations
-│   │   │   ├── 202406141234_create_orders_table.php
-│   │   │   └── 202406141350_create_order_statuses_table.php
-│   │   └── Repositories
-│   │       ├── OrderRepository.php
-│   │       └── OrderStatusRepository.php
+│   │   │   ├── 2024_06_14_123402_create_orders_table.php
+│   │   │   └── 2024_06_14_135011_create_order_statuses_table.php
+│   │   ├── Repositories
+│   │   │   ├── OrderRepository.php
+│   │   │   └── OrderStatusRepository.php
+│   │   └── Seeders
+│   │       └── OrderSeeder.php
 │   ├── Http
 │   │   ├── Controllers
 │   │   │   ├── OrderController.php
@@ -39,8 +44,10 @@ containers
     │   │   └── UserFactory.php
     │   ├── Migrations
     │   │   └── 2024_06_14_134255_create_users_table.php
-    │   └── Repositories
-    │       └── UserRepository.php
+    │   ├── Repositories
+    │   │   └── UserRepository.php
+    │   └── Seeders
+    │       └── UserSeeder.php
     ├── Http
     │   ├── Controllers
     │   │   └── UserController.php
@@ -199,6 +206,7 @@ php artisan app:provider User
 php artisan app:repository User
 ```
 
+*containers/User/Contracts/UserRepositoryContract.php*
 *containers/User/Data/Repositories/UserRepository.php*
 
 ### Create request
