@@ -15,6 +15,9 @@ use Maximzhurkin\Containers\Commands\MakeModelCommand;
 use Maximzhurkin\Containers\Commands\MakeProviderCommand;
 use Maximzhurkin\Containers\Commands\MakeRequestCommand;
 use Maximzhurkin\Containers\Commands\MakeRoutingCommand;
+use Maximzhurkin\Containers\Commands\MakeTestCommand;
+use Maximzhurkin\Containers\Commands\MakeTestFeatureCommand;
+use Maximzhurkin\Containers\Commands\MakeTestUnitCommand;
 
 class ContainerServiceProvider extends ServiceProvider
 {
@@ -48,6 +51,9 @@ class ContainerServiceProvider extends ServiceProvider
                 MakeRepositoryContractCommand::class,
                 MakeRequestCommand::class,
                 MakeRoutingCommand::class,
+                MakeTestCommand::class,
+                MakeTestFeatureCommand::class,
+                MakeTestUnitCommand::class,
             ]);
         }
     }
