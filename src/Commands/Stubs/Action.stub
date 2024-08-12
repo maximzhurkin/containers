@@ -1,0 +1,20 @@
+<?php
+
+namespace Containers\DummyContainer\Actions;
+
+use Containers\DummyContainer\Contracts\DummyNameRepositoryContract;
+use Illuminate\Database\Eloquent\Collection;
+
+readonly class DummyNameAction
+{
+    public function __construct(
+        private DummyNameRepositoryContract $repository
+    )
+    {
+    }
+
+    public function run(): Collection
+    {
+        return $this->repository->getAll();
+    }
+}
