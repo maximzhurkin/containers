@@ -5,6 +5,9 @@ A package with commands for a convenient Laravel project structure
 ```text
 containers
 ├── Order
+│   ├── Actions
+│   │   ├── ListOrdersAction.php
+│   │   └── ListOrderStatusesAction.php
 │   ├── Contracts
 │   │   ├── OrderRepositoryContract.php
 │   │   └── OrderStatusRepositoryContract.php
@@ -160,6 +163,17 @@ php artisan app:controller User
 
 *containers/User/Http/Controllers/UserController.php*
 
+### Create action
+
+```shell
+php artisan app:action User
+```
+
+*containers/User/Actions/UserAction.php*
+
+> [!WARNING]  
+> Specify the name of the entity so that the repository takes the correct name, then rename it to a specific action.
+
 ### Create factory
 
 ```shell
@@ -207,6 +221,7 @@ php artisan app:repository User
 ```
 
 *containers/User/Contracts/UserRepositoryContract.php*
+
 *containers/User/Data/Repositories/UserRepository.php*
 
 ### Create request
@@ -232,4 +247,5 @@ php artisan app:test User
 ```
 
 *containers/User/Tests/Feature/UserTest.php*
+
 *containers/User/Tests/Unit/UserTest.php*
