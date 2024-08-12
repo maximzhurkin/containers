@@ -3,6 +3,8 @@
 namespace Containers\DummyContainer\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Containers\DummyContainer\Actions\DummyNameAction;
+use Containers\DummyContainer\Data\Repositories\DummyNameRepository;
 use Containers\DummyContainer\Models\DummyName;
 use Containers\DummyContainer\Http\Requests\StoreDummyNameRequest;
 use Containers\DummyContainer\Http\Requests\UpdateDummyNameRequest;
@@ -14,7 +16,7 @@ class DummyNameController extends Controller
      */
     public function index()
     {
-        return 'DummyName@index';
+        return (new DummyNameAction(new DummyNameRepository()))->run();
     }
 
     /**
