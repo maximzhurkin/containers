@@ -22,6 +22,10 @@ class MakeContainerCommand extends Command
 
     public function handle(): void
     {
+        $this->call('app:action', [
+            'name' => $this->argument('name'),
+            'container' => $this->argument('container'),
+        ]);
         $this->call('app:provider', [
             'name' => $this->argument('name'),
             'container' => $this->argument('container'),

@@ -3,6 +3,7 @@
 namespace Maximzhurkin\Containers\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Maximzhurkin\Containers\Commands\MakeActionCommand;
 use Maximzhurkin\Containers\Commands\MakeContainerCommand;
 use Maximzhurkin\Containers\Commands\MakeControllerCommand;
 use Maximzhurkin\Containers\Commands\MakeFactoryCommand;
@@ -40,6 +41,7 @@ class ContainerServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MakeContainerCommand::class,
+                MakeActionCommand::class,
                 MakeControllerCommand::class,
                 MakeFactoryCommand::class,
                 MakeMigrationCommand::class,
