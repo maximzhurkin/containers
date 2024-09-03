@@ -2,6 +2,13 @@
     "name": "maximzhurkin/containers",
     "description": "Simple containers structure for Laravel",
     "type": "library",
+    "keywords": [
+        "laravel",
+        "containers",
+        "structure",
+        "commands"
+    ],
+    "homepage": "https://github.com/maximzhurkin/containers",
     "autoload": {
         "psr-4": {
             "Maximzhurkin\\Containers\\": "src/"
@@ -10,10 +17,13 @@
     "authors": [
         {
             "name": "Maxim Zhurkin",
-            "email": "maximzhurkin@gmail.com"
+            "email": "maximzhurkin@gmail.com",
+            "homepage": "https://maxzhurkin.name",
+            "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
+    "version": "1.0.0",
     "require": {
         "php": ">=8.1"
     },

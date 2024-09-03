@@ -55,31 +55,10 @@ containers
 
 ## Install
 
-### Add package & repository to composer.json
-
-```json
-{
-    "require": {
-        "maximzhurkin/containers": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "Containers\\": "containers/"
-        }
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/maximzhurkin/containers.git"
-        }
-    ]
-}
-```
-
 ### Install Containers with [composer](https://getcomposer.org/doc/00-intro.md):
 
 ```shell
-composer update maximzhurkin/containers
+composer require maximzhurkin/containers --dev
 ```
 
 ### Publish vendor config
