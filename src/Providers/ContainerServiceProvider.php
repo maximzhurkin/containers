@@ -34,10 +34,6 @@ class ContainerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__ . '/../config/containers.php' => config_path('containers.php'),
-        ]);
-
         if ($this->app->runningInConsole()) {
             $this->commands([
                 MakeContainerCommand::class,

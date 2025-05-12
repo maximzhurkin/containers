@@ -61,22 +61,14 @@ containers
 composer require maximzhurkin/containers --dev
 ```
 
-### Publish vendor config
-
-```shell
-php artisan vendor:publish --provider="Maximzhurkin\Containers\Providers\ContainerServiceProvider"
-```
-
 ### Add providers in bootstrap/providers.php:
 
 ```php
 use Maximzhurkin\Containers\Providers\ContainerServiceProvider;
-use Maximzhurkin\Containers\Providers\RouteServiceProvider;
 
 return [
     AppServiceProvider::class,
     ContainerServiceProvider::class,
-    RouteServiceProvider::class,
 ];
 ```
 
@@ -111,18 +103,6 @@ use Containers\Order\Providers\OrderProvider;
 return [
     //...
     OrderProvider::class,
-];
-```
-
-### Add created routing class to config/containers.php configuration file
-
-```php
-use Containers\Order\Http\Routing\OrderRouting;
-
-return [
-    'routes' => [
-        OrderRouting::class,
-    ],
 ];
 ```
 

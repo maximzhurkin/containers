@@ -2,9 +2,7 @@
 
 namespace Maximzhurkin\Containers\Contracts;
 
-use Illuminate\Contracts\Routing\Registrar;
-
 interface RouteRegistrar
 {
-    public function map(Registrar $registrar): void;
+    public static function map(): void;
 }

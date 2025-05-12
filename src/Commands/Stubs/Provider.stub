@@ -3,6 +3,7 @@
 namespace Containers\DummyContainer\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Containers\DummyContainer\Http\Routing\DummyNameRouting;
 
 class DummyNameProvider extends ServiceProvider
 {
@@ -20,5 +21,7 @@ class DummyNameProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(dirname(__DIR__) . '/Data/Migrations');
+
+        DummyNameRouting::map();
     }
 }
