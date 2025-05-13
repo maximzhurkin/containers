@@ -4,6 +4,9 @@ namespace Containers\DummyContainer\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Containers\DummyContainer\Http\Routing\DummyNameRouting;
+use Containers\DummyContainer\Contracts\DummyNameRepositoryContract;
+use Containers\DummyContainer\Data\Repositories\DummyNameRepository;
+
 
 class DummyNameProvider extends ServiceProvider
 {
@@ -12,7 +15,10 @@ class DummyNameProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(
+            DummyNameRepositoryContract::class,
+            DummyNameRepository::class
+        );
     }
 
     /**

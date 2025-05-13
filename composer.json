@@ -12,7 +12,8 @@
     "homepage": "https://github.com/maximzhurkin/containers",
     "autoload": {
         "psr-4": {
-            "Maximzhurkin\\Containers\\": "src/"
+            "Maximzhurkin\\Containers\\": "src/",
+            "Maximzhurkin\\Containers\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -34,5 +35,8 @@
                 "Maximzhurkin\\Containers\\Providers\\ContainerServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.3"
     }
 }

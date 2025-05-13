@@ -99,7 +99,7 @@ abstract class MakeCommand extends Command
      */
     protected function getLayerPath(): string
     {
-        if (!$this->stub) {
+        if (!$this->layer) {
             throw new Exception('Layer not defined');
         }
         return 'containers/' . $this->getContainer() . '/' . $this->layer;
@@ -137,8 +137,8 @@ abstract class MakeCommand extends Command
             }
         }
 
-        if (!File::exists($filename)) {
-            File::put($filename, Str::replace(
+        if (!File::exists(base_path($filename))) {
+            File::put(base_path($filename), Str::replace(
                 [
                     'DummyContainer',
                     'DummyName',
