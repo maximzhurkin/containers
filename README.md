@@ -58,7 +58,7 @@ containers
 ### Install Containers with [composer](https://getcomposer.org/doc/00-intro.md):
 
 ```shell
-composer require maximzhurkin/containers --dev
+composer require maximzhurkin/containers
 ```
 
 ### Add providers in bootstrap/providers.php:
