@@ -72,6 +72,27 @@ return [
 ];
 ```
 
+### Add Containers namespace
+
+Add autoload psr-4 containers in `composer.json`
+
+```json
+{
+    "autoload": {
+            "psr-4": {
+                "App\\": "app/",
+                "Containers\\": "containers/",
+            }
+    }
+}
+```
+
+And generating optimized autoload files
+
+```shell
+composer dump-autoload
+```
+
 ### Add tests paths in phpunit.xml
 
 ```xml
